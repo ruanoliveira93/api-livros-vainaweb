@@ -84,7 +84,7 @@ def doar_livro():
         db.close()
 
 # Rota doar para buscar livros no banco de dados
-@app.route('/doar', methods=['GET'])
+@app.route('/livros', methods=['GET'])
 def load_livros():
     cursor = None
     db = None
