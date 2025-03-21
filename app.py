@@ -47,6 +47,10 @@ cursor.close()
 app = Flask(__name__)
 CORS(app)
 
+@app.route('/')
+def home():
+    return jsonify({"mensagem": "API Python funcionando!"})
+
 # Rota doar para adicionar livros ao banco de dados
 @app.route('/doar', methods=['POST'])
 def doar_livro():
@@ -107,9 +111,8 @@ def load_livros():
         if db is not None:
             db.close()
 
-
 # Rota doar para deletar livro por ID
-@app.route('/doar/<int:id>', methods=["DELETE"])
+@app.route('/livros/<int:id>', methods=["DELETE"])
 def del_item(id):
     try:
         db = mysql.connector.connect(
@@ -137,6 +140,8 @@ def del_item(id):
         cursor.close()
         db.close()
 
+if __name__ == "__main__":
+    app.run(debug=True)
 
 if __name__ == "__main__":
     app.run(debug=True)
