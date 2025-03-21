@@ -1,6 +1,6 @@
 # Instalar Dependências
 Terminal: </br>
-1 - pip install venv venv (cria um ambiente virtual) </br>
+1 - python -m venv venv (cria um ambiente virtual) </br>
 2 - source venv/Scripts/activate (ativa o ambiente virtual) </br> 
 3 - python app.py (executa o arquivo app.py)
 
