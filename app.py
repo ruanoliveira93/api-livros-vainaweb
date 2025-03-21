@@ -19,7 +19,7 @@ cursor = db.cursor()
 cursor.execute("CREATE DATABASE IF NOT EXISTS livros_vai_na_web")
 db.close()  # Fechamos para reconectar já dentro do banco
 
-# Agora conectamos diretamente no banco criado
+# Conecta-se ao banco de dados
 db = mysql.connector.connect(
     host=os.getenv('DB_HOST'),
     user=os.getenv('DB_USER'),
@@ -29,7 +29,7 @@ db = mysql.connector.connect(
 
 cursor = db.cursor()
 
-# Criando a tabela corretamente
+# Criando a tabela livros, caso não exista
 cursor.execute("""
     CREATE TABLE IF NOT EXISTS livros (
         id INT AUTO_INCREMENT PRIMARY KEY,
@@ -47,9 +47,7 @@ cursor.close()
 app = Flask(__name__)
 CORS(app)
 
-# 📌 Rota para cadastrar livro
-
-
+# Rota doar para adicionar livros ao banco de dados
 @app.route('/doar', methods=['POST'])
 def doar_livro():
     data = request.get_json()
@@ -85,7 +83,7 @@ def doar_livro():
         cursor.close()
         db.close()
 
-
+# Rota doar para buscar livros no banco de dados
 @app.route('/doar', methods=['GET'])
 def load_livros():
     cursor = None
@@ -110,7 +108,7 @@ def load_livros():
             db.close()
 
 
-# 📌 Rota para deletar livro por ID
+# Rota doar para deletar livro por ID
 @app.route('/doar/<int:id>', methods=["DELETE"])
 def del_item(id):
     try:
