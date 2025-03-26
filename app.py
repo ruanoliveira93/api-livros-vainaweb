@@ -87,7 +87,7 @@ def doar_livro():
         cursor.close()
         db.close()
 
-# Rota doar para buscar livros no banco de dados
+# Rota livros para buscar livros no banco de dados
 @app.route('/livros', methods=['GET'])
 def load_livros():
     cursor = None
@@ -112,7 +112,7 @@ def load_livros():
             db.close()
 
 
-# Rota doar para deletar livro por ID
+# Rota livros para deletar livro por ID
 @app.route('/livros/<int:id>', methods=["DELETE"])
 def del_item(id):
     try:
