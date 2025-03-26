@@ -47,10 +47,7 @@ cursor.close()
 app = Flask(__name__)
 CORS(app)
 
-<<<<<<< HEAD
-=======
 # Rota home para teste no navegador
->>>>>>> 70c6913425b687845d5af6757c2148ee57919df1
 @app.route('/')
 def home():
     return jsonify({"mensagem": "API Python funcionando!"})
@@ -115,10 +112,6 @@ def load_livros():
         if db is not None:
             db.close()
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 70c6913425b687845d5af6757c2148ee57919df1
 # Rota livros para deletar livro por ID
 @app.route('/livros/<int:id>', methods=["DELETE"])
 def del_item(id):
