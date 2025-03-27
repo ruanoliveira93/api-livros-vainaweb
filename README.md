@@ -8,6 +8,8 @@ Terminal: </br>
 Terminal: </br>
 - pip install Flask
 - pip install flask-cors
+- pip install gunicorn
+- pip freeze > requirements.txt (cria um arquivo de texto listando todas bibliotecas do projeto)
 
 # Banco de Dados
 
