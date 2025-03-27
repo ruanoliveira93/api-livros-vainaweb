@@ -32,7 +32,7 @@ def doar():
     titulo = dados.get("titulo")
     categoria = dados.get("categoria")
     autor = dados.get("autor")
-    imagem_url = dados.get("image_url")
+    imagem_url = dados.get("imagem_url")
 
     if not titulo or not categoria or not autor or not imagem_url:
         return jsonify({"Erro": "Todos os campos são obrigatórios"}), 400
