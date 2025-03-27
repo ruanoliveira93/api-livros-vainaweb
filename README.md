@@ -6,10 +6,9 @@ Terminal: </br>
 
 # Instalar Bibliotecas
 Terminal: </br>
-- pip install flask request jsonify
-- pip install flask-cors CORS
-- pip install os
-- pip install python-dotenv
-- pip install mysql mysql-connector
+- pip install Flask
+- pip install flask-cors
 
-Para conectar seu banco de dados, basta editar os dados dentro do arquivo app.py e do arquivo .env
+# Banco de Dados
+
+- SQLite (Extensão DBCode)
